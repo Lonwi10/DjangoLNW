@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+    <head>
+        <title>{{ product.nom }} - Lonwi Shops</title>
+    </head>
+    <body>
+        <h2>{{ product.nom }}</h1>
+        <h3>{{ product.price }}€</h2>
+        <h4>{{ product.category }}</h3>
+        <p>{{ product.description }}</p>
+        <input type="button" onclick="location.href='/add/{{product.id}}';" value="Comprar"/>
+        
+		<p><a href="/">Volver</a></p>
+    </body>
+</html>
+
+{% endblock %}

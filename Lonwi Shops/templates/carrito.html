@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+
+<head>
+
+</head>
+
+<body>
+<ul>
+    {% for detall in detalls %}
+	    {% if forloop.first %}
+	    	{% if detall.carrito.obert == True%}
+	    		<input type="button" class="boton" onclick="location.href='/cerrar';" value="Cerrar Carrito"/>
+				{%else%}
+				<p> Carrito Cerrado </p>
+				<input type="button" class="boton" onclick="location.href='/reabrir/{{detall.carrito.id}}';" value="Reabrir Carrito"/>
+			{%endif%}
+        	<h2>Carrito {{detall.carrito.nom}}</h2>
+    	{%endif%}
+    <li>{{detall.producte.nom}} - {{detall.producte.price}}€</li>
+	{% empty %}
+    <li>No articles yet.</li>
+
+	{% endfor %}
+</ul>
+
+	<p><a href="/listacarritos">Volver</a></p>
+</body>
+
+</html>
+
+{% endblock %}

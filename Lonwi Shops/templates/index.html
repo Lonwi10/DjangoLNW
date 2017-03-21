@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<html>
+    <head>
+    </head>
+
+    <body>
+
+        {% for category in categories %}
+            <h2>{{ category.name }}</h2>
+            {% for product in category.product_set.all %}
+                <a href="/product/{{ product.id }}">{{ product.nom }}</a>
+            {% endfor %}
+        {% endfor %}
+        <p>  <a href="/listacarritos">Ir a la lista de carritos</a> </p>
+
+    </body>
+</html>
+
+{% endblock %}

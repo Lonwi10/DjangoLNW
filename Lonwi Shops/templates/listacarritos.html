@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+
+<head>
+
+</head>
+
+<body>
+	<h2>Carritos</h2>
+	<ul>
+{% for carrito in carrito_list %}
+    <li><a href="/carrito/{{carrito.id}}">{{carrito.nom}} </a></li>
+{% empty %}
+    <li>No articles yet.</li>
+{% endfor %}
+</ul>
+
+<p><a href="/">Volver</a></p>
+</body>
+
+</html>
+{% endblock %}
